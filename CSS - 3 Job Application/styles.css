@@ -1,0 +1,55 @@
+.all {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+input, select, textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 8px;
+  border: 2px solid #ccc;
+  font-size: 1rem;
+}
+
+input:first-of-type {
+  border-radius: 10px;
+}
+
+input:focus, textarea:focus {
+  border-color: #0077cc;
+  outline: none;
+}
+
+input:valid, select:valid, textarea:valid {
+  border-color: green;
+}
+
+input:invalid, select:invalid, textarea:invalid {
+  border-color: red;
+}
+
+
+button {
+  padding: 10px 20px;
+  background-color: #444;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0077cc;
+}
+
+.radio-group input[type="radio"]:checked {
+  border: 2px solid #0077cc;
+  background-color: #e0f0ff;
+  box-shadow: 0 0 5px #0077cc;
+}
+
+.radio-group input[type="radio"]:checked + label,
+.radio-group label:has(input[type="radio"]:checked) {
+  color: #0077cc;
+}
