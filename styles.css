@@ -6,34 +6,143 @@ body {
   color: #333;
 }
 
-header {
+header#welcome {
   background-color: #4a90e2;
   color: white;
-  padding: 40px 20px;
-  text-align: center;
+  height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 header h1 {
   margin: 0;
+  font-size: 3rem;
+}
+
+header p {
+  font-size: 1.5rem;
 }
 
 nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
   display: flex;
   justify-content: center;
   gap: 20px;
-  padding: 20px;
+  padding: 15px;
   background-color: #ffffff;
+  border-bottom: 2px solid #4a90e2;
+  z-index: 1000;
 }
 
 nav a {
   color: #4a90e2;
   font-weight: bold;
-  padding: 10px 15px;
-  border: 2px #4a90e2;
+  padding: 8px 12px;
   border-radius: 5px;
+  text-decoration: none;
 }
 
 nav a:hover {
   background-color: #4a90e2;
   color: white;
+}
+
+#projects {
+  padding: 100px 20px 40px; 
+  text-align: center;
+}
+
+.project-links {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.project-links a {
+  color: #4a90e2;
+  font-weight: bold;
+  text-decoration: none;
+  border: 2px solid #4a90e2;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+.project-links a:hover {
+  background-color: #4a90e2;
+  color: white;
+}
+
+.tribute-image-link,
+.landing-image-link,
+.flexbox-image {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.tribute-image-link img,
+.landing-image-link img,
+.flexbox-image img {
+  max-width: 300px;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.tribute-image-link img:hover,
+.landing-image-link img:hover {
+  transform: scale(1.05);
+}
+
+.floating-triangles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.float {
+  width: 50px;
+  height: auto;
+  position: absolute;
+  animation: floatAround 6s linear infinite;
+}
+
+.float:nth-child(2) { animation-delay: 2s; animation-duration: 10s; }
+.float:nth-child(3) { animation-delay: 4s; animation-duration: 10s; }
+.float:nth-child(4) { animation-delay: 6s; animation-duration: 10s; }
+.float:nth-child(5) { animation-delay: 8s; animation-duration: 10s; }
+.float:nth-child(6) { animation-delay: 9s; animation-duration: 10s; }
+.float:nth-child(7) { animation-delay: 9.5s; animation-duration: 10s; }
+
+@keyframes floatAround {
+  0% { top: 80%; left: 10%; }
+  10% { top: 10%; left: 20%; }
+  40% { top: 20%; left: 80%; }
+  70% { top: 30%; left: 50%; }
+  100% { top: 80%; left: 10%; }
+}
+
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1.2rem;
+  }
 }
