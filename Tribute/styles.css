@@ -41,4 +41,34 @@ body {
   text-align: left;
   margin: 20px 0;
 }
+.floating-triangles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
 
+.float {
+  width: 50px;
+  height: auto;
+  position: absolute;
+  animation: floatAround 6s linear infinite;
+}
+
+.float:nth-child(2) { animation-delay: 2s; animation-duration: 10s; }
+.float:nth-child(3) { animation-delay: 4s; animation-duration: 10s; }
+.float:nth-child(4) { animation-delay: 6s; animation-duration: 10s; }
+.float:nth-child(5) { animation-delay: 8s; animation-duration: 10s; }
+.float:nth-child(6) { animation-delay: 9s; animation-duration: 10s; }
+.float:nth-child(7) { animation-delay: 9.5s; animation-duration: 10s; }
+
+@keyframes floatAround {
+  0% { top: 80%; left: 10%; }
+  10% { top: 10%; left: 20%; }
+  40% { top: 20%; left: 80%; }
+  70% { top: 30%; left: 50%; }
+  100% { top: 80%; left: 10%; }
+}
